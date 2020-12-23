@@ -2,6 +2,8 @@
 
 I was curious, so I got it to "work".
 
+![Gif Demo](demo.gif)
+
 ### How it Works
 
 I had to spelunk in the Turbo source a bit, but basically you need an
