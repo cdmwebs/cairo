@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>WebSocket</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@hotwired/turbo@7.0.0-beta.1/dist/turbo.es2017-umd.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const eventSource = new EventSource("{{ url_for('sse.stream') }}");
+        Turbo.connectStreamSource(eventSource)
+        Turbo.start()
+
+        eventSource.addEventListener('error', (event) => {
+          console.error("Failed to connect to event stream. Is Redis running?");
+        }, false);
+      })
+    </script>
+  </head>
+  <body>
+    <h3>TURBO</h3>
+    <p>Let's see what's going on.</p>
+    <div id="messages"></div>
+  </body>
+</html>

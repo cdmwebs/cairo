@@ -1,0 +1,5 @@
+flask
+flask_sse
+gunicorn
+gevent
+Jinja2
