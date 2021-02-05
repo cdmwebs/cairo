@@ -10,7 +10,8 @@ I had to spelunk in the Turbo source a bit, but basically you need an
 `EventSource` to listen to an event-stream broadcasting from the
 server.
 
-Turbo needs to be have `connectStreamSource` called with the EventSource, then call `.start()`.
+Turbo needs to have `connectStreamSource` called with the EventSource.
+Once that's connected, then you can call `.start()`.
 
 ```javascript
 const eventSource = new EventSource("/stream");
